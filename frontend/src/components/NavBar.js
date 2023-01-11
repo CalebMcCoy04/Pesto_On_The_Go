@@ -12,8 +12,8 @@ function NavBar() {
             <NavLink className='nav-links' to="/Menu">
                 Menu
             </NavLink>
-            <NavLink className='nav-links' to="/Cart">
-                Cart
+            <NavLink className='nav-links' to="/Order">
+                Order
             </NavLink>
             <NavLink className='nav-links' to="/Profile">
                 Profile
