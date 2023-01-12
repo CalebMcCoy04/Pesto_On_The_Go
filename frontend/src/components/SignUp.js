@@ -24,13 +24,11 @@ function SignUp({setCurrentUser}) {
     })
       .then(r => r.json())
       .then(data => {
-        if (data.errors) {
-
-        //   setErrors(data.errors)
-        } else {
-            setCurrentUser(data.user)
+        
+            console.log(data)
+            setCurrentUser(data)
           navigate('/')
-        }
+        
       })
   }
 
