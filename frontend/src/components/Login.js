@@ -6,7 +6,7 @@ function Login() {
         username: '',
         password: ''
     })
-    const [errors, setErrors] = useState([])
+    // const [errors, setErrors] = useState([])
     const { username, password } = formData
     const navigate = useNavigate() // useNavigate hook to navigate programmatically
 
@@ -22,7 +22,8 @@ function Login() {
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify(user)
         })
-            
+            .then(r => r.json())
+            .then(console.log)
             // .then(r => {
             //     if (r.ok) {
             //         r.json().then(user => {
