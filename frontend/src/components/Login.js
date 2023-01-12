@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Login() {
+function Login({setCurrentUser}) {
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -23,6 +23,7 @@ function Login() {
             body: JSON.stringify(user)
         })
             .then(r => r.json())
+            .then(setCurrentUser(user))
             .then(console.log)
             // .then(r => {
             //     if (r.ok) {

@@ -5,6 +5,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 
 function App() {
+
   const [currentUser, setCurrentUser] = useState('')
   useEffect(()=>{
     fetch('/auth')
@@ -14,15 +15,15 @@ function App() {
       }
     })
   },[])
-
+console.log(currentUser)
 if(!currentUser)return <Login setCurrentUser={setCurrentUser} />
 
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar setCurrentUser={setCurrentUser}/>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path='/SignUp' element={<SignUp />} />
+          <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>} />
+          <Route path='/SignUp' element={<SignUp setCurrentUser={setCurrentUser}/>} />
         </Routes>
     </div>
   );

@@ -1,10 +1,15 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 
-function NavBar() {
+function NavBar({setCurrentUser}) {
+
+    const navigate = useNavigate()
+    
     const handleLogOut = () => {
         fetch('/logout',{
             method:'DELETE'
         })
+        setCurrentUser('')
+        navigate('/login')
     }
     return(
         <div className="navbar">
@@ -29,7 +34,7 @@ function NavBar() {
             <NavLink className='nav-links' to="/SignUp">
                 SignUp
             </NavLink>
-            <button onClick={handleLogOut}>Log Out</button>
+            <button onClick={handleLogOut }>Log Out</button>
             </div>
         </div>
     )
