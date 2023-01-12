@@ -4,9 +4,9 @@ class UsersController < ApplicationController
     end
     
     def show
-        # Find the user using the cookie value
-        user = User.find(params[:id])
-        render json: user, status: :ok
+       
+        current_user = User.find(session[:user_id])
+        render json: current_user, status: :ok
       end
 
     def create

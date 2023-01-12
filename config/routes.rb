@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   
   post '/login', to:'sessions#login'
   delete '/logout', to:'sessions#destroy'
-  get '/authorized', to: 'users#show'
+  get '/auth', to: 'users#show'
 end

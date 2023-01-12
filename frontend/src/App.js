@@ -5,6 +5,18 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState('')
+  useEffect(()=>{
+    fetch('/auth')
+    .then(r => {
+      if(r.ok){
+        r.json().then(user => setCurrentUser(user))
+      }
+    })
+  },[])
+
+if(!currentUser)return <Login setCurrentUser={setCurrentUser} />
+
   return (
     <div className="App">
       <NavBar/>
