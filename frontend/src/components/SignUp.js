@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function SignUp({}) {
+function SignUp({setCurrentUser}) {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -25,9 +25,11 @@ function SignUp({}) {
       .then(r => r.json())
       .then(data => {
         if (data.errors) {
+
         //   setErrors(data.errors)
         } else {
-          navigate('/', { replace: true })
+            setCurrentUser(data.user)
+          navigate('/')
         }
       })
   }

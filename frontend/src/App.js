@@ -16,8 +16,15 @@ function App() {
     })
   },[])
 console.log(currentUser)
-if(!currentUser)return <Login setCurrentUser={setCurrentUser} />
-
+if(!currentUser)return(
+<>
+  
+    <Login setCurrentUser={setCurrentUser}/> 
+  
+  
+    <SignUp setCurrentUser={setCurrentUser}/>
+</>
+)
   return (
     <div className="App">
       <NavBar setCurrentUser={setCurrentUser}/>
