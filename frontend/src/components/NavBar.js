@@ -1,10 +1,15 @@
 import {NavLink} from 'react-router-dom'
 
 function NavBar() {
+    const handleLogOut = () => {
+        fetch('/logout',{
+            method:'DELETE'
+        })
+    }
     return(
         <div className="navbar">
             
-            <h1 className='nav-title'></h1>
+            <h1 className='nav-title'>NavBar</h1>
             <div className='all-nav-links'>
             <NavLink className='nav-links' to="/">
                 Home
@@ -24,6 +29,7 @@ function NavBar() {
             <NavLink className='nav-links' to="/SignUp">
                 SignUp
             </NavLink>
+            <button onClick={handleLogOut}>Log Out</button>
             </div>
         </div>
     )

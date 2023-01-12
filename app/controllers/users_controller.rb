@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     
     def show
         # Find the user using the cookie value
-        user = User.find(cookies[:user_id])
+        user = User.find(params[:id])
         render json: user, status: :ok
       end
 
