@@ -1,18 +1,22 @@
 import {useState, useEffect} from 'react'
+import ItemHolder from './ItemHolder';
 
 function Item() {
-const [item, setItem] = useState([]);
+const [items, setItems] = useState([]);
 
 useEffect(()=>{
     fetch('/items')
     .then(r => r.json())
     .then(data =>
-        setItem(data))
+        setItems(data))
 },[])
-console.log(item)
+// console.log(items)
     return(
         <>
         <h1>Items:</h1>
+            <ul id="item-holder">
+                {items.map(item =>  <ItemHolder item={item} key={item.id}/>)}
+            </ul>
         </>
     )
 }
