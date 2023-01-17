@@ -13,7 +13,11 @@ puts 'deleteing old data'
 puts'seeding users'
 u1 = User.create!(username: "john", password:'password', email: "example@gmail.com")
 
+puts 'seedind items'
+i1 = Item.create!(name: "pasta", price: 9)
 
-
-
+puts 'seeding orders'
+o1 = Order.create!(user_id: u1.id) 
+puts 'seedind item_orders'
+io1 = ItemOrder.create!(item_id: i1.id, order_id: o1.id)
 puts 'seeding done'

@@ -19,8 +19,8 @@ function NavBar({setCurrentUser}) {
             <NavLink className='nav-links' to="/">
                 Home
             </NavLink>
-            <NavLink className='nav-links' to="/Menu">
-                Menu
+            <NavLink className='nav-links' to="/item">
+                Items
             </NavLink>
             <NavLink className='nav-links' to="/Order">
                 Order
@@ -28,12 +28,7 @@ function NavBar({setCurrentUser}) {
             <NavLink className='nav-links' to="/Profile">
                 Profile
             </NavLink>
-            <NavLink className='nav-links' to="/Login">
-                login
-            </NavLink>
-            <NavLink className='nav-links' to="/SignUp">
-                SignUp
-            </NavLink>
+          
             <button onClick={handleLogOut }>Log Out</button>
             </div>
         </div>
