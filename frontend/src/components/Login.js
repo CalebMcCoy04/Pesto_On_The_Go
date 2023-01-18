@@ -23,8 +23,11 @@ function Login({setCurrentUser}) {
             body: JSON.stringify(user)
         })
             .then(r => r.json())
-            .then(setCurrentUser(user))
-            .then(console.log)
+            .then(data => {
+                setCurrentUser(data)
+                console.log(data)
+            })
+            
             // .then(r => {
             //     if (r.ok) {
             //         r.json().then(user => {

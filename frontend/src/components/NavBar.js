@@ -9,7 +9,7 @@ function NavBar({setCurrentUser}) {
             method:'DELETE'
         })
         setCurrentUser('')
-        navigate('/login')
+        // navigate('/login')
     }
     return(
         <div className="navbar">

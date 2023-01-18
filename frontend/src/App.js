@@ -9,7 +9,7 @@ import ItemOrder from './components/ItemOrder'
 function App() {
   const [items, setItems] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [currentUser, setCurrentUser] = useState(false)
+  const [currentUser, setCurrentUser] = useState(null)
   useEffect(()=>{
     fetch('/auth')
     .then(r => {
@@ -18,8 +18,8 @@ function App() {
       }
     })
   },[])
-  console.log(orders)
-// console.log(currentUser)
+  // console.log(orders)
+console.log(currentUser)
 if(!currentUser)return(
 <>
   
