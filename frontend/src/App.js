@@ -7,7 +7,7 @@ import Item from './components/Item'
 import Order from './components/Order'
 function App() {
 
-  const [currentUser, setCurrentUser] = useState('')
+  const [currentUser, setCurrentUser] = useState(false)
   useEffect(()=>{
     fetch('/auth')
     .then(r => {
@@ -32,7 +32,7 @@ if(!currentUser)return(
         <Routes>
           <Route path="/item" element={<Item setCurrentUser={setCurrentUser}/>}/>
           
-          <Route path='/Order' element={<Order setCurrentUser={setCurrentUser}/>}/>        
+          <Route path='/Order' element={<Order currentUser={currentUser}/>}/>        
         </Routes>
     </div>
   );

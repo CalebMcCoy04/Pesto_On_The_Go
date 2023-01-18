@@ -14,9 +14,11 @@ useEffect(()=>{
     return(
         <>
         <h1>Items:</h1>
-            <ul id="item-holder">
-                {items.map(item =>  <ItemHolder item={item} key={item.id}/>)}
-            </ul>
+            <fieldset>
+                <ul id="item-holder">
+                    {items.map(item =>  <ItemHolder item={item} key={item.id}/>)}
+                </ul>
+            </fieldset>
         </>
     )
 }

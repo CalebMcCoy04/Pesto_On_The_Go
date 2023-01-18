@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :user
 
-  validates_associated :user
+  validates :user_id, presence: true, numericality: { only_integer: true }
 end

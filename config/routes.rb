@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   delete '/logout', to:'sessions#destroy'
   get '/auth', to: 'users#show'
   get 'items', to: 'items#index'
+  
+  post '/item_orders', to: 'item_orders#create'
 end

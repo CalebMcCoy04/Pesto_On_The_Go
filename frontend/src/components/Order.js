@@ -1,21 +1,25 @@
 import {useState, useEffect} from 'react'
 
 function Order({currentUser}) {
+    const [user, setUser] = useState(currentUser);
     const [formData, setFormData] = useState({
-    user_id: currentUser
-    })
+        user_id:user.id
+    });
 
+    useEffect(() => {
+        setUser(currentUser);
+        setFormData({...formData, user_id:currentUser.id});
+    }, [currentUser]);
     function onSubmit(e){
-        e.preventDefault()
-        setFormData({...formData, user_id:currentUser});
-        fetch('/orders',{
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        })
-            .then(r => r.json())
-            .then(data => console.log(data))
-    }
+    e.preventDefault()
+    fetch('/orders',{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+        
+}
+
 
     return(
         <>
