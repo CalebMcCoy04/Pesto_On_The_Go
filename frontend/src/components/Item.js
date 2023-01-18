@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import ItemHolder from './ItemHolder';
 
-function Item() {
-const [items, setItems] = useState([]);
+function Item({items, setItems}) {
+
 
 useEffect(()=>{
     fetch('/items')

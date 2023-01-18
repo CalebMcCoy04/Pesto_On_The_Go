@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-function Order({currentUser}) {
+function Order({currentUser, setOrders, orders}) {
     const [user, setUser] = useState(currentUser);
     const [formData, setFormData] = useState({
         user_id:user.id
@@ -10,23 +10,28 @@ function Order({currentUser}) {
         setUser(currentUser);
         setFormData({...formData, user_id:currentUser.id});
     }, [currentUser]);
-    function onSubmit(e){
-    e.preventDefault()
-    fetch('/orders',{
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    })
-        
-}
+    
 
+    function onSubmit(e) {
+        e.preventDefault()
+        fetch('/orders',{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            setOrders([...orders, data])
+        })
+    }
+    console.log(orders)
 
     return(
         <>
             <h1>Orders</h1>
             <form onSubmit={onSubmit}>
                 <input type="hidden" name="user_id" value={formData.user_id} />
-                <button type="submit">Submit Order</button>
+                <button type="submit">Create Order</button>
             </form>
         </>
     )

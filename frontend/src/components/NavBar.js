@@ -25,7 +25,7 @@ function NavBar({setCurrentUser}) {
             <NavLink className='nav-links' to="/Order">
                 Order
             </NavLink>
-            <NavLink className='nav-links' to="/Profile">
+            <NavLink className='nav-links' to="/ItemOrder">
                 Profile
             </NavLink>
           
