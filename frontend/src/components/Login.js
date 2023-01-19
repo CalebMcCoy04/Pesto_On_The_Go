@@ -25,6 +25,7 @@ function Login({setCurrentUser}) {
             .then(r => r.json())
             .then(data => {
                 setCurrentUser(data)
+                navigate('/')
                 console.log(data)
             })
             
@@ -48,7 +49,8 @@ function Login({setCurrentUser}) {
 
     return (
         <>
-            <form onSubmit={onSubmit}>
+            <form className='login-form' 
+                onSubmit={onSubmit}>
                 <label>
                     Username
                 </label>

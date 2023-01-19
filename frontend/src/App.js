@@ -6,8 +6,11 @@ import SignUp from './components/SignUp';
 import Item from './components/Item'
 import Order from './components/Order'
 import ItemOrder from './components/ItemOrder'
+import './App.css'
+
 function App() {
   const [items, setItems] = useState([]);
+  console.log(items)
   const [orders, setOrders] = useState([]);
   const [currentUser, setCurrentUser] = useState(null)
   useEffect(()=>{
@@ -29,6 +32,7 @@ if(!currentUser)return(
     <SignUp setCurrentUser={setCurrentUser}/>
 </>
 )
+else
   return (
     <div className="App">
       <NavBar setCurrentUser={setCurrentUser}/>

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useEffect} from 'react'
 import ItemHolder from './ItemHolder';
 
 function Item({items, setItems}) {
@@ -6,19 +6,22 @@ function Item({items, setItems}) {
 
 useEffect(()=>{
     fetch('/items')
-    .then(r => r.json())
-    .then(data =>
-        setItems(data))
+    .then(r => {
+        if(r.ok){
+            r.json().then(data =>
+                setItems(data))
+            }
+        })
 },[])
 // console.log(items)
     return(
         <>
         <h1>Items:</h1>
-            <fieldset>
+            
                 <ul id="item-holder">
                     {items.map(item =>  <ItemHolder item={item} key={item.id}/>)}
                 </ul>
-            </fieldset>
+            
         </>
     )
 }

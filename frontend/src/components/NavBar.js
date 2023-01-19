@@ -8,28 +8,32 @@ function NavBar({setCurrentUser}) {
         fetch('/logout',{
             method:'DELETE'
         })
-        setCurrentUser('')
-        // navigate('/login')
+        .then(r=>{
+            if(r.ok){
+                setCurrentUser(null)
+                navigate('/')
+            }
+        })
     }
     return(
         <div className="navbar">
             
-            <h1 className='nav-title'>NavBar</h1>
+            <h1 className='nav-title'>Pesto on the Go</h1>
             <div className='all-nav-links'>
             <NavLink className='nav-links' to="/">
                 Home
             </NavLink>
             <NavLink className='nav-links' to="/item">
-                Items
+                View Items
             </NavLink>
             <NavLink className='nav-links' to="/Order">
-                Order
+                Orders
             </NavLink>
             <NavLink className='nav-links' to="/ItemOrder">
-                Profile
+                profile
             </NavLink>
           
-            <button onClick={handleLogOut }>Log Out</button>
+            <button className='logout-button'  onClick={handleLogOut }>Log Out</button>
             </div>
         </div>
     )

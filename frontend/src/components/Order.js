@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-
+import OrderList from './OrderList';
 function Order({currentUser, setOrders, orders}) {
     const [user, setUser] = useState(currentUser);
     const [formData, setFormData] = useState({
@@ -19,10 +19,11 @@ function Order({currentUser, setOrders, orders}) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
-        .then(response => response.json())
-        .then(data => {
-            setOrders([...orders, data])
-        })
+        .then(r => {
+            if(r.ok)
+            r.json().then(data => {
+                setOrders([...orders, data])
+        })})
     }
     console.log(orders)
 
@@ -33,6 +34,7 @@ function Order({currentUser, setOrders, orders}) {
                 <input type="hidden" name="user_id" value={formData.user_id} />
                 <button type="submit">Create Order</button>
             </form>
+            <OrderList/>
         </>
     )
 }

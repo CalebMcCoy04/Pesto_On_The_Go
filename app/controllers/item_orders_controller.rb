@@ -1,5 +1,5 @@
 class ItemOrdersController < ApplicationController
-    skip_before_action :authorized_user, only: :index
+  
     
     def index
         render json: ItemOrder.all    
