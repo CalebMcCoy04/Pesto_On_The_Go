@@ -8,7 +8,7 @@ function Login({setCurrentUser}) {
     })
     // const [errors, setErrors] = useState([])
     const { username, password } = formData
-    const navigate = useNavigate() // useNavigate hook to navigate programmatically
+    const navigate = useNavigate()
 
     function onSubmit(e) {
         e.preventDefault()

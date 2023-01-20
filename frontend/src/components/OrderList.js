@@ -8,7 +8,9 @@ useEffect(()=> {
     .then(r => {
         if(r.ok){
             r.json().then(data =>
-                setOrderList(data))
+               
+                setOrderList(data)
+                )
         }
     })
 },[])
@@ -18,7 +20,7 @@ useEffect(()=> {
         <h1>Order List:</h1>
             
                 <ul className='order-list'>
-                    {orderList.map(order => <OrderListHolder order={order} key={order.id}/>)}
+                    {orderList.map(order => <OrderListHolder setOrderList={setOrderList} order={order} key={order.id}/>)}
                 </ul>
             
     </>

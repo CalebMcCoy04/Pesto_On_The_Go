@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     end
 
     def destroy
-        if authorized_user(:authorized_user)
+       
             found_order = Order.find_by(id: params[:id])
             if found_order 
                 found_order.destroy
@@ -22,8 +22,6 @@ class OrdersController < ApplicationController
             else 
                 render json: {"errors": "Order not found"}, status: :not_found
             end
-        else
-            render json: {"errors": "Unauthorized action"}, status: :unauthorized
-        end
+        
     end  
 end

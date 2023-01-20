@@ -1,8 +1,10 @@
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ItemOrder({orders, items}){
 console.log(orders)
 console.log(items)
+const navigate = useNavigate()
 const [formData, setFormData] = useState({
     item_id:'',
     order_id:''
@@ -15,6 +17,10 @@ console.log(formData)
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formData)
         })
+        // .then(r => {
+        //     if(r.ok)
+        //     navigate('/Order')
+        // })
     }
 
     return(

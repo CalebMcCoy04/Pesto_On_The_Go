@@ -1,7 +1,12 @@
 import {useState, useEffect} from 'react'
 import OrderList from './OrderList';
+import { useNavigate } from 'react-router-dom'
+
+
+
 function Order({currentUser, setOrders, orders}) {
     const [user, setUser] = useState(currentUser);
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         user_id:user.id
     });
@@ -23,6 +28,7 @@ function Order({currentUser, setOrders, orders}) {
             if(r.ok)
             r.json().then(data => {
                 setOrders([...orders, data])
+                navigate('/ItemOrder')
         })})
     }
     console.log(orders)

@@ -16,6 +16,17 @@ class ItemOrdersController < ApplicationController
         end
     end
 
+    def destroy
+        
+            found_item_order = ItemOrder.find_by(id: params[:id])
+            if found_item_order 
+                found_item_order.destroy 
+                head :no_content
+            else 
+                render json: {"errors": "Item Order not found"}, status: :not_found
+            end
+    end  
+
     private
     def new_itemorder_params
         params.permit(:item_id, :order_id)

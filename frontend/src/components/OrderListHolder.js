@@ -1,6 +1,6 @@
 import React from "react";
-
-function OrderListHolder({order}){
+import { DeleteButton } from "./DeleteButton";
+function OrderListHolder({order, setOrderList}){
 console.log(order)
     return(
         
@@ -8,6 +8,7 @@ console.log(order)
             <fieldset>
                 <li >{order.item.name}</li>
             </fieldset>
+            <DeleteButton setOrderList={setOrderList}id={order.id}/>
         </div>
     )
 }
