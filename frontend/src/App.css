@@ -19,8 +19,31 @@
   background-color: #F0EDEE;
 }
 .login-form {
+  text-align: center;
   width: 300px;
   border: 15px solid #07393C;
   padding: 50px;
   margin: 20px;
+}
+.signUp-form {
+  text-align: center;
+  width: 300px;
+  border: 15px solid #07393C;
+  padding: 50px;
+  margin: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: #07393C;
+  color: #CBA135;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }

@@ -1,4 +1,5 @@
 import{useEffect, useState} from 'react';
+
 import { Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar'
 import Login from './components/Login';
@@ -6,6 +7,7 @@ import SignUp from './components/SignUp';
 import Item from './components/Item'
 import Order from './components/Order'
 import ItemOrder from './components/ItemOrder'
+import Profile from './components/Profile';
 import './App.css'
 
 function App() {
@@ -40,6 +42,7 @@ else
           <Route path="/item" element={<Item items={items} setItems={setItems} setCurrentUser={setCurrentUser}/>}/>
             <Route path='/Order' element={<Order currentUser={currentUser} setOrders={setOrders} orders={orders}/>}/>        
             <Route path='/ItemOrder' element={<ItemOrder items={items} orders={orders}/>}/>
+            <Route path='Profile' element={<Profile currentUser={currentUser}/>}/>
         </Routes>
     </div>
   );
