@@ -19,7 +19,23 @@ function Order({currentUser, setOrders, orders}) {
 
     function onSubmit(e) {
         e.preventDefault()
-        fetch('/orders',{
+        navigate('/ItemOrder')
+    //     // fetch('/orders',{
+    //     //     method: 'POST',
+    //     //     headers: { 'Content-Type': 'application/json' },
+    //     //     body: JSON.stringify(formData)
+    //     // })
+    //     .then(r => {
+    //         if(r.ok)
+    //         r.json().then(data => {
+    //             setOrders([...orders, data])
+    //             navigate('/ItemOrder')
+    //     })})
+     }
+    
+    console.log(orders)
+    function createOrder(){
+             fetch('/orders',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -31,15 +47,14 @@ function Order({currentUser, setOrders, orders}) {
                 navigate('/ItemOrder')
         })})
     }
-    console.log(orders)
-
     return(
         <>
             <h1>Orders</h1>
             <form onSubmit={onSubmit}>
                 <input type="hidden" name="user_id" value={formData.user_id} />
-                <button type="submit">Create Order</button>
+                <button type="submit">add item to order</button>
             </form>
+            <button onClick={createOrder} >Create new Order</button>
             <OrderList/>
         </>
     )

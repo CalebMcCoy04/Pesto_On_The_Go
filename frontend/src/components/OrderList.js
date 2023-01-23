@@ -2,25 +2,25 @@ import {useState, useEffect} from 'react'
 import OrderListHolder from './OrderListHolder';
 
 function OrderList(){
-    const [orderList, setOrderList] = useState([]);
-useEffect(()=> {
-    fetch('/item_orders')
-    .then(r => {
-        if(r.ok){
-            r.json().then(data =>
-               
-                setOrderList(data)
-                )
-        }
-    })
-},[])
-
+    const [orderListAll, setOrderListAll] = useState([]);
+    useEffect(()=> {
+        fetch('/orders')
+        .then(r => {
+            if(r.ok){
+                r.json().then(data =>
+                    
+                    setOrderListAll(data)
+                    )
+            }
+        })
+    },[])
+    console.log(orderListAll)
     return(
     <>
         <h1>Order List:</h1>
             
                 <ul className='order-list'>
-                    {orderList.map(order => <OrderListHolder setOrderList={setOrderList} order={order} key={order.id}/>)}
+                    {orderListAll.map(order => <OrderListHolder setOrderList={setOrderListAll} order={order} key={order.id}/>)}
                 </ul>
             
     </>

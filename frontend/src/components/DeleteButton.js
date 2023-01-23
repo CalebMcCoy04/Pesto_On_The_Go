@@ -1,5 +1,5 @@
-import {useNavigate} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+
+import {useState} from 'react'
 
 export const DeleteButton = ({id, setOrderList}) =>{
     const [deleting, setDeleting] = useState(false)
@@ -11,7 +11,7 @@ export const DeleteButton = ({id, setOrderList}) =>{
         })
         .then(r=>{
             if(r.ok){
-                    fetch('/item_orders')
+                    fetch('/orders')
                     .then(r => {
                         if(r.ok){
                             r.json().then(data =>

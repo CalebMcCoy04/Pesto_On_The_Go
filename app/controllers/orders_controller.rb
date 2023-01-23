@@ -1,8 +1,15 @@
 class OrdersController < ApplicationController
-   
+   skip_before_action :authorized_user, only: :index
     def index
         render json: Order.all
     end
+
+    # def index
+    #     orders = Order.left_outer_joins(item_orders: :item).select("orders.*, item_orders.*, items.*")
+    #     render json: orders
+    # end
+    
+      
     
     def create 
         new_order = Order.create(user_id: params[:user_id])

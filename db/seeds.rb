@@ -14,8 +14,10 @@ puts'seeding users'
 u1 = User.create!(username: "john", password:'password', email: "example@gmail.com")
 
 puts 'seedind items'
-i1 = Item.create!(name: "pasta", price: 9)
-
+i1 = Item.create!(name: "Pasta", price: 9)
+i2 = Item.create!(name: "Pepsi", price: 2)
+i3 = Item.create!(name: "Bread-Sticks", price: 5)
+i4 = Item.create!(name: "Salad", price: 6)
 puts 'seeding orders'
 o1 = Order.create!(user_id: u1.id) 
 puts 'seedind item_orders'

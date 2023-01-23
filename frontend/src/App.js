@@ -12,8 +12,8 @@ import './App.css'
 
 function App() {
   const [items, setItems] = useState([]);
-  console.log(items)
   const [orders, setOrders] = useState([]);
+  console.log(orders)
   const [currentUser, setCurrentUser] = useState(null)
   useEffect(()=>{
     fetch('/auth')
@@ -42,7 +42,7 @@ else
           <Route path="/item" element={<Item items={items} setItems={setItems} setCurrentUser={setCurrentUser}/>}/>
             <Route path='/Order' element={<Order currentUser={currentUser} setOrders={setOrders} orders={orders}/>}/>        
             <Route path='/ItemOrder' element={<ItemOrder items={items} orders={orders}/>}/>
-            <Route path='Profile' element={<Profile currentUser={currentUser}/>}/>
+            <Route path='Profile' element={<Profile setCurrentUser={setCurrentUser} currentUser={currentUser}/>}/>
         </Routes>
     </div>
   );

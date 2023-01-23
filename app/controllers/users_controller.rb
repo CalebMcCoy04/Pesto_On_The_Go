@@ -13,14 +13,22 @@ class UsersController < ApplicationController
     end 
     
     def update
-        if @user.update(params[:username])
-            render json: @user, status: :ok
-        else 
-            render json: @user.error, status: :unprocessable_entity
+        user = User.find_by_id(params[:id])
+        if user
+            if user.update!(update_params)
+                render json: user, status: :accepted
+            else 
+                render json: user.errors, status: :unprocessable_entity
+            end
+        else
+            render json: {error: "user not found"}
         end
-    end     
+    end
+    
     private 
-
+    def update_params
+        params.permit(:email)
+    end
     def user_params
         params.permit(:username, :email, :password)
     end 

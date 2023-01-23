@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 
 
-function Profile({currentUser}) {
+function Profile({currentUser, setCurrentUser}) {
     const [updatedEmail, setUpdatedEmail] = useState(currentUser.email)
     const [showModal, setShowModal] = useState(false);
     console.log(currentUser)
@@ -16,8 +16,18 @@ function Profile({currentUser}) {
         },        
         body: JSON.stringify({
             email: updatedEmail
+            
         })      
+        
     })
+    .then(r => {
+      if(r.ok){
+        r.json().then(setCurrentUser) 
+      } else {
+        r.text().then(console.warn)
+      }
+    })
+    
     setShowModal(false)
 }
 

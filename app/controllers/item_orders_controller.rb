@@ -7,7 +7,7 @@ class ItemOrdersController < ApplicationController
 
     def create
         new_itemorder = ItemOrder.create(new_itemorder_params)
-        new_itemorder.order_id = params[:order_id]
+        
         if new_itemorder.valid?
             new_itemorder.save!
             render json: new_itemorder
