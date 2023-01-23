@@ -4,11 +4,12 @@ class OrdersController < ApplicationController
         render json: Order.all
     end
 
-    # def index
-    #     orders = Order.left_outer_joins(item_orders: :item).select("orders.*, item_orders.*, items.*")
-    #     render json: orders
-    # end
-    
+    def total
+        order = Order.find(params[:id])
+        total = order.total
+        render json: { total: total }
+      end
+      
       
     
     def create 

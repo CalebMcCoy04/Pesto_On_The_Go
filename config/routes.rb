@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/auth', to: 'users#show'
   
   delete '/delete-orders/:id', to: 'orders#destroy'
-
+  get '/orders/:id/total', to: 'orders#total'
   
 
 end

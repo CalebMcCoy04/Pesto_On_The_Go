@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   has_many :items, through: :item_orders, source: :item
   validates :user_id, presence: true, numericality: { only_integer: true }
 
-  def print_receipt
+  def total
+    items.sum(&:price)
   end
 end
