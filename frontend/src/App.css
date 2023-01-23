@@ -41,9 +41,34 @@
   height: 30%;
   text-align: center;
   transform: translate(-50%, -50%);
-  background-color: #07393C;
+  border: 15px solid #07393C;
+  background-color: #0A090C;
   color: #CBA135;
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.order-card {
+  text-align: center;
+  
+}
+.li {
+  
+  text-align: center;
+  width: 300px;
+  border: 15px solid #07393C;
+  padding: 50px;
+  margin: 20px;
+  color:#CBA135;
+  background-color: #0A090C;
+  padding: 50px;
+  margin: 20px;
+}
+.delete-orders-button {
+  color: #CBA135;
+  background-color: #0A090C;
+  border: 2px solid #F0EDEE;
+}
+.main-order-div {
+  text-align: center;
 }

@@ -3,14 +3,6 @@ class OrdersController < ApplicationController
     def index
         render json: Order.all
     end
-
-    def total
-        order = Order.find(params[:id])
-        total = order.total
-        render json: { total: total }
-      end
-      
-      
     
     def create 
         new_order = Order.create(user_id: params[:user_id])

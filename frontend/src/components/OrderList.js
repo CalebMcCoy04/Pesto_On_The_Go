@@ -16,14 +16,14 @@ function OrderList(){
     },[])
     console.log(orderListAll)
     return(
-    <>
-        <h1>Order List:</h1>
+    <div className='main-order-div'>
+        <h1>Orders</h1>
             
-                <ul className='order-list'>
-                    {orderListAll.map(order => <OrderListHolder setOrderList={setOrderListAll} order={order} key={order.id}/>)}
-                </ul>
+                <div className='order-list'>
+                    {orderListAll.map(order => <OrderListHolder setOrderList={setOrderListAll} order={order} key={`order${order.id}`}/>)}
+                </div>
             
-    </>
+    </div>
  )   
 }
 export default OrderList
