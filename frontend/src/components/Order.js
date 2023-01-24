@@ -48,15 +48,15 @@ function Order({currentUser, setOrders, orders}) {
         })})
     }
     return(
-        <>
-            <h1>Orders</h1>
+        <div className='order-div'>
+            
             <form onSubmit={onSubmit}>
                 <input type="hidden" name="user_id" value={formData.user_id} />
                 <button type="submit">add item to order</button>
             </form>
             <button onClick={createOrder} >Create new Order</button>
             <OrderList/>
-        </>
+        </div>
     )
 }
 export default Order

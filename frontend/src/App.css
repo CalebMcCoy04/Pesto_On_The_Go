@@ -1,4 +1,10 @@
-
+.App {
+  background-color: #0A090C;
+  background-attachment: fixed;
+  background-size: cover;
+ 
+  
+}
 
 .navbar {
  background-color: #07393C;
@@ -18,6 +24,11 @@
 .logout-button {
   background-color: #F0EDEE;
 }
+.login-div {
+  display: flex;
+  justify-content: center;
+  color: #CBA135;
+}
 .login-form {
   text-align: center;
   width: 300px;
@@ -25,8 +36,14 @@
   padding: 50px;
   margin: 20px;
 }
+.signUp-div {
+  display: flex;
+  justify-content: center;
+  color: #CBA135;
+}
 .signUp-form {
   text-align: center;
+  
   width: 300px;
   border: 15px solid #07393C;
   padding: 50px;
@@ -50,6 +67,8 @@
 }
 .order-card {
   text-align: center;
+  display: flex;
+  justify-content: center;
   
 }
 .li {
@@ -63,6 +82,7 @@
   background-color: #0A090C;
   padding: 50px;
   margin: 20px;
+  
 }
 .delete-orders-button {
   color: #CBA135;
@@ -71,4 +91,43 @@
 }
 .main-order-div {
   text-align: center;
+}
+#item-holder {
+  text-align: center;
+  width: 300px;
+  border: 15px solid #07393C;
+  padding: 50px;
+  margin: 20px;
+  color:#CBA135;
+  background-color: #0A090C;
+  padding: 50px;
+  margin: 20px;
+  
+}
+.item-order {
+  text-align: center;
+  width: 300px;
+  border: 15px solid #07393C;
+  padding: 50px;
+  margin: 20px;
+  color:#CBA135;
+  background-color: #0A090C;
+  padding: 50px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.order-div {
+  color: #CBA135;
+  text-align: center;
+}
+.profile-holder {
+  color: #CBA135;
+  text-align: center;
+}
+.items {
+  color: #CBA135;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }

@@ -15,14 +15,15 @@ useEffect(()=>{
 },[])
 // console.log(items)
     return(
-        <>
-        <h1>Items:</h1>
+        <div className='items'>
+        
             
                 <ul id="item-holder">
+                    <h1>Items</h1>
                     {items.map(item =>  <ItemHolder item={item} key={item.id}/>)}
                 </ul>
             
-        </>
+        </div>
     )
 }
 export default Item

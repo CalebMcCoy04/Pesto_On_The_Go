@@ -37,21 +37,22 @@ function SignUp({setCurrentUser}) {
     setFormData({ ...formData, [name]: value })
   }
   return (
-    <>
+    <div className='signUp-div'>
       <form className='signUp-form' onSubmit={onSubmit}>
-        <label>Username</label>
+        
+        <label>Username:</label>
         <input type='text' name='username'  onChange={handleChange} />
 
-        <label>Email</label>
         <input type='text' name='email'  onChange={handleChange} />
+        <label>Email:</label>
 
-        <label>Password</label>
         <input type='password' name='password'  onChange={handleChange} />
+        <label>Password</label>
 
         <input type='submit' value='Sign up!' />
       </form>
       {/* error handling nt */}
-    </>
+    </div>
   )
 }
 

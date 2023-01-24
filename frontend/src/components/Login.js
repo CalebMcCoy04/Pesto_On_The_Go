@@ -48,7 +48,7 @@ function Login({setCurrentUser}) {
     }
 
     return (
-        <>
+        <div className='login-div'>
             <form className='login-form' 
                 onSubmit={onSubmit}>
                 <label>
@@ -72,7 +72,7 @@ function Login({setCurrentUser}) {
 
                 <input type='submit' value='Log in!' />
             </form>
-        </>
+        </div>
     )
 }
 export default Login
