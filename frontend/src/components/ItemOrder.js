@@ -24,8 +24,8 @@ console.log(formData)
     }
 
     return(
-        <div className='item-order'>
-            <form onSubmit={onSubmit}>
+        <div className='item-order-div'>
+            <form className='item-order' onSubmit={onSubmit}>
                 <select name="order_id" value={formData.order_id} onChange={e => setFormData({...formData, order_id: e.target.value})}>
                     <option value="" disabled>Select an order</option>
                     {orders.map(order => {

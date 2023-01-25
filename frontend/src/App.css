@@ -105,18 +105,21 @@
   margin: 20px;
   
 }
+.item-order-div{
+  display: flex;
+  justify-content: center;
+}
 .item-order {
+  display: flex;
+  justify-content: center;
   text-align: center;
   width: 300px;
   border: 15px solid #07393C;
-  padding: 50px;
-  margin: 20px;
+  
   color:#CBA135;
   background-color: #0A090C;
   padding: 50px;
   margin: 20px;
-  display: flex;
-  justify-content: center;
 }
 .order-div {
   color: #CBA135;

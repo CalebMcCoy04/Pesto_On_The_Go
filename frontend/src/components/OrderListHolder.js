@@ -9,7 +9,7 @@ function OrderListHolder({ order, setOrderList }) {
     
         <li className="li">
           {order.items.map(item => (
-            <p key={`item${item.id}`}>
+            <p key={`item-${item.id} order-${order.id}`}>
               {item.name} - ${item.price}
             </p>
           ))}
