@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-   skip_before_action :authorized_user, only: :index
+    before_action :authorized_user
     def index
-        render json: Order.all
+        render json: current_user.orders
     end
     
     def create 

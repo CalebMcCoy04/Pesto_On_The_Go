@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-    
+    before_action :authorized_user
     
     def index 
         render json: Item.all
